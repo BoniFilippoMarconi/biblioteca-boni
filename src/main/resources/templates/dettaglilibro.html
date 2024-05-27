@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=NTR' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Dettagli</title>
+    <style>
+        label, input{
+            font-family: 'NTR';
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: 'NTR'; padding-top:15px;">DETTAGLI LIBRO</h1>
+
+    <form th:object="${libro}" class="col-4">
+        
+        <label>ISBN: </label> <input type="text" th:field="*{isbn}" readonly>
+        <br>
+        <label>Titolo: </label> <input type="text" th:field="*{titolo}" readonly>
+        <br>
+        <label>Autore: </label> <input type="text" th:field="*{autore}" readonly>
+        <br>
+        <label>Genere: </label> <input type="text" th:field="*{genere}" readonly>
+        <br>
+        <label>Anno Pubblicazione: </label> <input type="number" th:field="*{anno}" readonly>
+    </form>
+
+    <!--
+    <a th:href="@{/prodotto/modifica/{codice}(codice=${prodotto.codice})}"><button>Modifica Prodotto</button></a>
+    <a th:href="@{/prodotto/elimina/{codice}(codice=${prodotto.codice})}"><button>Elimina Prodotto</button></a>
+    -->
+    <a th:href="@{/libri}"><button>Home</button></a>
+    
+</body>
+</html>
